@@ -30,7 +30,7 @@ function makeCards() {
             inquirer.prompt([{
                 name: "question",
                 message: front[count]
-            }]).then(function(answers) {
+            }]).then(function (answers) {
                 if ((answers.question).toLowerCase() === back[count]) {
                     console.log("\nCorrect, the answer was " + log[count]);
                     score++;
@@ -50,6 +50,5 @@ function makeCards() {
     }
 }
 makeCards();
-
 
 module.exports = "DemoBasic";

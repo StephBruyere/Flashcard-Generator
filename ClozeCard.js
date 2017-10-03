@@ -1,16 +1,16 @@
 
 var inquirer = require('inquirer');
 
-function clozecard (text, cloze, fullText) {
+function clozecard(text, cloze, fullText) {
     this.text = text,
-    this.cloze = cloze,
-    this.fullText = fullText
+        this.cloze = cloze,
+        this.fullText = fullText
 }
 
 clozecard.prototype.full = function () {
     clozeDeleted = this.cloze,
-    clozeText = this.text,
-    clozeFull = this.fullText
+        clozeText = this.text,
+        clozeFull = this.fullText
     closeText = clozeText.replace("....", clozeDeleted);
 }
 
@@ -61,11 +61,11 @@ function moreCards() {
                 message: "Enter the completed answer\n"
 
             }]).then(function (answers) {
-               var NewCard = new clozecard (
+                var NewCard = new clozecard(
                     answers.partial,
                     answers.cloze,
                     answers.fullText
-               );
+                );
                 cardArr.push(NewCard);
                 cardArr.push
                 cardCount++;
