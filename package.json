@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/StephBruyere/Flashcard-Generator#readme",
   "dependencies": {
+    "connect": "^3.6.5",
+    "connection": "0.0.0",
+    "flashcards": "^1.12.0",
     "inquirer": "^3.3.0"
   }
 }
