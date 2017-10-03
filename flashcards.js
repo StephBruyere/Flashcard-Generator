@@ -5,7 +5,7 @@ var inquirer = require('inquirer');
 	inquirer.prompt([{
 		type: "list",
 		name: "begin",
-		message: "Please choose",
+		message: "\nPlease choose a game",
 		choices: ["Play Cloze Game", "Play Basic Card Game", "Demo Cloze Game", "Demo Basic Game"]
 	}]).then( function (answers) {
 		if (answers.begin === "Play Cloze Game") {

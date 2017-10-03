@@ -9,17 +9,19 @@ var score = 0
 function restart() {
     inquirer.prompt([{
         name: "restart",
-        message: "\nWant to play again?\n",
+        message: "\nWhat would you like to do?\n",
         type: "list",
-        choices: ["Yes", "No"]
+        choices: ["Play different game", "Play again", "Quit"]
     }]).then(function (answers) {
-        if (answers.restart === "Yes") {
-            count = 0;
-            score = 0;
+        if (answers.restart === "Play different game") {
             var flashcards = require("./flashcards.js");
             var connection = flashcards;
             var connection1 = new connection();
             connection1.test();
+        } if (answers.restart === "Play again") {
+           count = 0;
+            score = 0;
+            makeCards();
         } else { console.log("\nThanks for playing!"); }
     });
 }

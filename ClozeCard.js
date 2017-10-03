@@ -29,17 +29,19 @@ function begin() {
 function restart() {
     inquirer.prompt([{
         name: "restart",
-        message: "\nWant to play again?\n",
+        message: "\nWhat would you like to do?\n",
         type: "list",
-        choices: ["Yes", "No"]
+        choices: ["Play different game", "Play again", "Quit"]
     }]).then(function (answers) {
-        if (answers.restart === "Yes") {
-            count = 0;
-            score = 0;
+        if (answers.restart === "Play different game") {
             var flashcards = require("./flashcards.js");
             var connection = flashcards;
             var connection1 = new connection();
             connection1.test();
+        } if (answers.restart === "Play again") {
+           count = 0;
+            score = 0;
+            begin();
         } else { console.log("\nThanks for playing!"); }
     });
 }
@@ -86,12 +88,12 @@ function startGame() {
         name: "start",
         message: "Ready to play?\n",
         type: "list",
-        choices: ["Play", "Make more cards"]
+        choices: ["Play", "Make NEW cards"]
     }]).then(function (answers) {
         if (answers.start === "Play") {
             playGame();
         } else {
-            console.log("\nYou have choosen to make more cards\n");
+            console.log("\nYou have choosen to make NEW cards\n");
             cardCount = 0;
             moreCards();
         }
