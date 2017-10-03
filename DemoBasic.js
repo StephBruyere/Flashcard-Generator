@@ -29,7 +29,8 @@ function makeCards() {
         var inquirer = require('inquirer'); {
             inquirer.prompt([{
                 name: "question",
-                message: front[count]
+                message: front[count],
+                validate: Boolean
             }]).then(function (answers) {
                 if ((answers.question).toLowerCase() === back[count]) {
                     console.log("\nCorrect, the answer was " + log[count]);

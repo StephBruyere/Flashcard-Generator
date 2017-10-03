@@ -50,15 +50,18 @@ function moreCards() {
         {
             inquirer.prompt([{
                 name: "partial",
-                message: "Please enter your question with <....> in place of the hidden word?\n"
+                message: "Please enter your question with <....> in place of the hidden word?\n",
+                validate: Boolean
             },
             {
                 name: "cloze",
-                message: "Enter the word you would like to hide\n"
+                message: "Enter the word you would like to hide\n",
+                validate: Boolean
             },
             {
                 name: "fullText",
-                message: "Enter the completed answer\n"
+                message: "Enter the completed answer\n",
+                validate: Boolean
 
             }]).then(function (answers) {
                 var NewCard = new clozecard(
@@ -101,6 +104,7 @@ function playGame() {
             inquirer.prompt([{
                 name: "question",
                 message: cardArr[count].text,
+                validate: Boolean
             }]).then(function (answers) {
                 if ((answers.question).toLowerCase() === cardArr[count].cloze) {
                     console.log("\nCorrect, the answer is:\n " + cardArr[count].fullText);

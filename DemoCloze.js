@@ -47,7 +47,8 @@ function moreCards() {
         var inquirer = require('inquirer'); {
             inquirer.prompt([{
                 name: "question",
-                message: cardArr[count].text
+                message: cardArr[count].text,
+                validate: Boolean
             }]).then(function(answers) {
                 if ((answers.question).toLowerCase() === cardArr[count].cloze) {
                     console.log("\nCorrect, the answer was " + cardArr[count].cloze);

@@ -50,11 +50,13 @@ function moreCards() {
         {
             inquirer.prompt([{
                 name: "front",
-                message: "Enter the your question\n"
+                message: "Enter the your question\n",
+                validate: Boolean
             },
             {
                 name: "back",
-                message: "Enter the answer\n"
+                message: "Enter the answer\n",
+                validate: Boolean
 
             }]).then(function (answers) {
                 cardArr.push(answers.front);
@@ -91,7 +93,8 @@ function playGame() {
         var inquirer = require('inquirer'); {
             inquirer.prompt([{
                 name: "question",
-                message: cardArr[count]
+                message: cardArr[count],
+                validate: Boolean
             }]).then(function (answers) {
                 if ((answers.question).toLowerCase() === anwArr[count]) {
                     console.log("\nCorrect, the answer was " + anwArr[count]);
